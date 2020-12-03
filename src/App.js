@@ -23,6 +23,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Login} />
             <PrivateRoute path="/dashboard" comp={Dashboard} />
+            <Redirect to="/" />
           </Switch>
         </Router>
       </PersistGate>

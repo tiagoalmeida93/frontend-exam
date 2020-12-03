@@ -9,7 +9,7 @@ function Login() {
 
   useEffect(() => {
     dispatch(AuthRequest());
-  }, []);
+  }, [dispatch]);
 
   return <h1>Login</h1>;
 }
