@@ -1,28 +1,24 @@
 import produce from "immer";
-import AuthConstants from "./types";
+import AppConstants from "./types";
 
 const INITIAL_STATE = {
-  isLogged: false,
   isLoading: false,
-  email: "",
   message: "",
 };
 
-export default function AuthReducer(state = INITIAL_STATE, action) {
+export default function AppReducer(state = INITIAL_STATE, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case AuthConstants.REQUEST:
+    case AppConstants.REQUEST:
       return produce(state, (draft) => {
         draft.isLoading = true;
       });
-    case AuthConstants.REQUEST_SUCCESS:
+    case AppConstants.REQUEST_SUCCESS:
       return produce(state, (draft) => {
         draft.isLoading = false;
-        draft.isLogged = true;
-        draft.email = payload;
       });
-    case AuthConstants.REQUEST_FAILED:
+    case AppConstants.REQUEST_FAILED:
       return produce(state, (draft) => {
         draft.isLoading = false;
         draft.message = payload;

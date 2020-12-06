@@ -5,7 +5,7 @@ import AuthConstants from "./types";
 
 function* getAuth(action) {
   try {
-    delay(500);
+    yield delay(2500);
     yield put(AuthRequestSuccess(action.payload));
   } catch (error) {
     yield put(AuthRequestFailed(error));
